@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="./resourses/newcss.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <composite:interface>
+            <composite:attribute name="username" default="uname"/>
+            <composite:attribute name="password" default="pass"/>
+            <composite:attribute name="submitvalue" default="submit"/>
+            <composite:attribute name="resetvalue" default="reset"/>
+            <composite:valueHolder name="id"/>
+            <composite:valueHolder name="pas"/>
+        </composite:interface>
+        <composite:implementation>
+            <br/><br/><br/><br/>
+            <table align="center" cellspacing="0.5" border="1" width="100%" bgcolor="FFFFFF">
+                <tr>
+                    <td align="center" bgcolor="#000080"><font color="#FFE4B5">ACCOUNT LOGIN</font></td>
+                </tr>
+                <tr>
+                    <td bgcolor="#000080">
+                        <table border="0" align="center" width="100%">
+                            <h:form>
+                                <tr>
+                                    <td align="left"><font color="#FFE4B5">ID:</font></td>
+                                    <td align="left" >
+                                        <h:inputText size="8" id="id1" value="#{cc.attrs.username}"></h:inputText>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left"><font color="#FFE4B5">PASSWORD:</font></td>
+                                    <td align="left"><h:inputSecret size="10" value="#{cc.attrs.password}"></h:inputSecret>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center"><h:commandButton value="#{cc.attrs.submitvalue}" styleClass="button" action="#{checklogin.check}"/></td>
+                                    <td align="center"><h:commandButton value="#{cc.attrs.resetvalue}" type="reset" styleClass="button"/></td>
+                                </tr>
+                            </h:form>   
+                        </table>
+                        
+                    </td>
+                    
+                </tr>
+            </table>
+        </composite:implementation>
+    </h:body>
+</html>
+
